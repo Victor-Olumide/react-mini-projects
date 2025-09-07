@@ -19,11 +19,47 @@ export default function QuizApp() {
 
   async function loadQuestions() {
     try {
-      const res = await fetch("/questions.json");
-      const data = await res.json();
-      const shuffled = [...data].sort(() => Math.random() - 0.5);
-      setQuestions(shuffled);
-      setAnswers(new Array(shuffled.length).fill(""));
+      const savedQuestions = localStorage.getItem('quizQuestions');
+      let questionsData;
+      if (savedQuestions) {
+        questionsData = JSON.parse(savedQuestions);
+      } else {
+        const res = await fetch("/questions.json");
+        const data = await res.json();
+        questionsData = [...data].sort(() => Math.random() - 0.5);
+        localStorage.setItem('quizQuestions', JSON.stringify(questionsData));
+      }
+      setQuestions(questionsData);
+      setAnswers(new Array(questionsData.length).fill(""));
+
+      // Load saved state
+      const savedAnswers = localStorage.getItem('quizAnswers');
+      if (savedAnswers) {
+        const parsedAnswers = JSON.parse(savedAnswers);
+        if (parsedAnswers.length === questionsData.length) {
+          setAnswers(parsedAnswers);
+        }
+      }
+      const savedCurrent = localStorage.getItem('quizCurrent');
+      if (savedCurrent && parseInt(savedCurrent) < questionsData.length) {
+        setCurrent(parseInt(savedCurrent));
+      }
+      const savedTimeLeft = localStorage.getItem('quizTimeLeft');
+      if (savedTimeLeft) {
+        setTimeLeft(parseInt(savedTimeLeft));
+      }
+      const savedStarted = localStorage.getItem('quizStarted');
+      if (savedStarted) {
+        setStarted(savedStarted === 'true');
+      }
+      const savedShowScore = localStorage.getItem('quizShowScore');
+      if (savedShowScore) {
+        setShowScore(savedShowScore === 'true');
+      }
+      const savedScore = localStorage.getItem('quizScore');
+      if (savedScore) {
+        setScore(parseInt(savedScore));
+      }
     } catch (error) {
       console.error("Failed to load questions:", error);
     }
@@ -40,6 +76,30 @@ export default function QuizApp() {
     }, 1000);
     return () => clearInterval(timer);
   }, [timeLeft, showScore, started]);
+
+  useEffect(() => {
+    localStorage.setItem('quizAnswers', JSON.stringify(answers));
+  }, [answers]);
+
+  useEffect(() => {
+    localStorage.setItem('quizCurrent', current.toString());
+  }, [current]);
+
+  useEffect(() => {
+    localStorage.setItem('quizTimeLeft', timeLeft.toString());
+  }, [timeLeft]);
+
+  useEffect(() => {
+    localStorage.setItem('quizStarted', started.toString());
+  }, [started]);
+
+  useEffect(() => {
+    localStorage.setItem('quizShowScore', showScore.toString());
+  }, [showScore]);
+
+  useEffect(() => {
+    localStorage.setItem('quizScore', score.toString());
+  }, [score]);
 
   const handleNext = () => {
     if (current + 1 < questions.length) setCurrent(current + 1);
@@ -73,6 +133,13 @@ export default function QuizApp() {
   };
 
   const restartQuiz = () => {
+    localStorage.removeItem('quizQuestions');
+    localStorage.removeItem('quizAnswers');
+    localStorage.removeItem('quizCurrent');
+    localStorage.removeItem('quizTimeLeft');
+    localStorage.removeItem('quizStarted');
+    localStorage.removeItem('quizShowScore');
+    localStorage.removeItem('quizScore');
     setCurrent(0);
     setAnswers(new Array(questions.length).fill(""));
     setScore(0);
@@ -127,7 +194,7 @@ export default function QuizApp() {
         )}
 
         {showScore ? (
-          <div>
+          <div className="p-8">
             <h2 className="text-xl mb-6">
               You scored {score} out of {questions.length}
             </h2>

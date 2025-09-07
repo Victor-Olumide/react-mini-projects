@@ -1,4 +1,6 @@
-// src/app/page.jsx
+export const metadata = {
+  title: "React Mini Projects",
+};
 
 import Link from "next/link";
 
