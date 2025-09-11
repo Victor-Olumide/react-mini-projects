@@ -1,24 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# React Mini Projects
+
+A collection of interactive mini-projects built with [Next.js](https://nextjs.org) and React, showcasing various functionalities and UI components. This project includes several small applications such as a BMI Calculator, Tic Tac Toe game, Password Generator, Character Counter, and a Quiz App.
 
 ## Getting Started
 
-First, run the development server:
+First, install the dependencies:
+
+```bash
+npm install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the home page with links to all mini-projects.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+You can start editing any project by modifying the corresponding page in `src/app/[project-name]/page.jsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project uses [Tailwind CSS](https://tailwindcss.com) for styling and [React Icons](https://react-icons.github.io/react-icons/) for icons.
+
+## Mini Projects
+
+- **BMI Calculator** ![BMI Calculator](/bmi-calc.png) - Calculate your Body Mass Index (BMI) based on height and weight inputs.
+- **Tic Tac Toe** ![Tic Tac Toe](/tictactoe.png) - Play the classic two-player strategy game with a clean, responsive interface.
+- **Password Generator** ![Password Generator](/passgen.png) - Generate strong, secure passwords with customizable options like length and character types.
+- **Character Counter** ![Character Counter](/char-counter.png) - Count characters, words, and sentences in your text with real-time updates.
+- **Quiz App** ![Quiz App](/quiz.png) - Test your knowledge with interactive quizzes featuring multiple-choice questions.
 
 ## Learn More
 
@@ -37,28 +47,44 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 ## Project Structure
 
-- .gitignore
-- eslint.config.mjs
-- jsconfig.json
-- next.config.js
-- package-lock.json
-- package.json
-- postcss.config.mjs
-- README.md
-- public/
-  - file.svg
-  - globe.svg
-  - next.svg
-  - vercel.svg
-  - window.svg
-- src/
-  - app/
-    - favicon.ico
-    - globals.css
-    - layout.jsx
-    - not-found.jsx
-    - page.jsx
-    - bmi-calculator/
-      - page.jsx
-    - tic-tac-toe/
-      - page.jsx
+```
+├── public/
+│   ├── bmi-calc.png
+│   ├── char-counter.png
+│   ├── fruit.jpg
+│   ├── passgen.png
+│   ├── questions.json
+│   ├── quiz.png
+│   ├── security.jpg
+│   ├── tictactoe.png
+│   ├── favicon.ico
+│   ├── file.svg
+│   ├── globe.svg
+│   ├── next.svg
+│   ├── vercel.svg
+│   └── window.svg
+├── src/
+│   ├── app/
+│   │   ├── favicon.ico
+│   │   ├── globals.css
+│   │   ├── layout.jsx
+│   │   ├── not-found.jsx
+│   │   ├── page.jsx          # Homepage
+│   │   ├── bmi-calculator/
+│   │   │   └── page.jsx
+│   │   ├── character-counter/
+│   │   │   └── page.jsx
+│   │   ├── password-generator/
+│   │   │   └── page.jsx
+│   │   ├── quiz-app/
+│   │   │   └── page.jsx
+│   │   └── tic-tac-toe/
+│   │       └── page.jsx
+├── .gitignore
+├── eslint.config.mjs
+├── jsconfig.json
+├── next.config.js
+├── package.json
+├── postcss.config.mjs
+└── README.md
+```
