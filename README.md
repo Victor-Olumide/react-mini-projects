@@ -24,11 +24,11 @@ This project uses [Tailwind CSS](https://tailwindcss.com) for styling and [React
 
 ## Mini Projects
 
-- **BMI Calculator** ![BMI Calculator](/bmi-calc.png) - Calculate your Body Mass Index (BMI) based on height and weight inputs.
-- **Tic Tac Toe** ![Tic Tac Toe](/tictactoe.png) - Play the classic two-player strategy game with a clean, responsive interface.
-- **Password Generator** ![Password Generator](/passgen.png) - Generate strong, secure passwords with customizable options like length and character types.
-- **Character Counter** ![Character Counter](/char-counter.png) - Count characters, words, and sentences in your text with real-time updates.
-- **Quiz App** ![Quiz App](/quiz.png) - Test your knowledge with interactive quizzes featuring multiple-choice questions.
+- **BMI Calculator** ![BMI Calculator](/public/bmi-calc.png) - Calculate your Body Mass Index (BMI) based on height and weight inputs.
+- **Tic Tac Toe** ![Tic Tac Toe](/public/tictactoe.png) - Play the classic two-player strategy game with a clean, responsive interface.
+- **Password Generator** ![Password Generator](/public/passgen.png) - Generate strong, secure passwords with customizable options like length and character types.
+- **Character Counter** ![Character Counter](/public/char-counter.png) - Count characters, words, and sentences in your text with real-time updates.
+- **Quiz App** ![Quiz App](/public/quiz.png) - Test your knowledge with interactive quizzes featuring multiple-choice questions.
 
 ## Learn More
 
