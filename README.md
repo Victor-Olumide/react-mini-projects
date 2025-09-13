@@ -68,7 +68,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 │   │   ├── favicon.ico
 │   │   ├── globals.css
 │   │   ├── layout.jsx
-│   │   ├── not-found.jsx
 │   │   ├── page.jsx          # Homepage
 │   │   ├── bmi-calculator/
 │   │   │   └── page.jsx
