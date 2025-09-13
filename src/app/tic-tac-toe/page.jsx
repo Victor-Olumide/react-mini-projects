@@ -57,8 +57,6 @@ export default function TicTacToe() {
     setBoard(Array(9).fill(null));
     setIsXNext(true);
     setWinner(null);
-    setPlayerSymbol(null);
-    setMode(null);
   };
 
   const makeComputerMove = () => {
