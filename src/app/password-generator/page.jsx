@@ -59,7 +59,7 @@ export default function PasswordGenerator() {
             <input
               type="checkbox"
               checked={includeUpper}
-              onChange={(e) => setIncludeSymbols(e.target.checked)}
+              onChange={(e) => setIncludeUpper(e.target.checked)}
               className="cursor-pointer"
             />
             Include Uppercase Letters
@@ -68,7 +68,7 @@ export default function PasswordGenerator() {
             <input
               type="checkbox"
               checked={includeNumbers}
-              onChange={(e) => setIncludeSymbols(e.target.checked)}
+              onChange={(e) => setIncludeNumbers(e.target.checked)}
               className="cursor-pointer"
             />
             Include Numbers

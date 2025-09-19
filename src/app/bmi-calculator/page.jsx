@@ -11,7 +11,7 @@ export default function BmiCalculator() {
   useEffect(() => {
     const w = parseFloat(weight);
     const h = parseFloat(height);
-    if (isNaN(w) || isNaN(h) || h <= 0) {
+    if (isNaN(w) || isNaN(h) || w <= 0 || h <= 0) {
       setBmi("");
       setStatus("");
       setRecommendation("");

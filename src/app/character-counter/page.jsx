@@ -39,12 +39,12 @@ export default function CharacterCounter() {
             <p className="text-sm">Characters</p>
             <p className="md:text-4xl p-3 font-semibold">{charCount}</p>
           </div>
-          <div className="p-3 bg-yellow-300 rounded-lg shadow to-black" >
+          <div className="p-3 bg-yellow-300 rounded-lg shadow text-black" >
             <p className="text-sm">Words</p>
             <p className="md:text-4xl p-3 font-semibold">{wordCount}</p>
           </div>
           <div className="p-3 bg-green-400 rounded-lg shadow text-white">
-            <p className="text-sm ">Sentences</p>
+            <p className="text-sm">Sentences</p>
             <p className="md:text-4xl p-3 font-semibold">{sentenceCount}</p>
           </div>
         </div>

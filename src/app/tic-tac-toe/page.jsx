@@ -27,15 +27,15 @@ export default function TicTacToe() {
       mode === "single" &&
       ((isXNext && playerSymbol === "O") || (!isXNext && playerSymbol === "X"))
     ) {
-      return;
+      return
     }
 
-    const newBoard = [...board];
-    newBoard[index] = isXNext ? "X" : "O";
-    setBoard(newBoard);
-    setIsXNext(!isXNext);
-    checkWinner(newBoard);
-  };
+    const newBoard = [...board]
+    newBoard[index] = isXNext ? "X" : "O"
+    setBoard(newBoard)
+    setIsXNext(!isXNext)
+    checkWinner(newBoard)
+  }
 
   const checkWinner = (newBoard) => {
     for (let [a, b, c] of winningCombos) {
