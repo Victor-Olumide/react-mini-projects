@@ -52,7 +52,7 @@ export default function CharacterCounter() {
         <div className="flex justify-center mt-6">
           <button
             onClick={handleCopy}
-            className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition"
+            className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition cursor-pointer"
           >
             Copy Text
           </button>

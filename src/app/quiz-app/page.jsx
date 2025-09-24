@@ -162,7 +162,7 @@ export default function QuizApp() {
           <h2 className="text-lg font-semibold pb-4">You are required to answer {questions.length} questions under {formatTime(timeLeft)} mins, Good luck Champ!</h2>
           <button
             onClick={startQuiz}
-            className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-xl text-lg"
+            className="bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-xl text-lg cursor-pointer"
           >
             Start Quiz
           </button>
@@ -222,7 +222,7 @@ export default function QuizApp() {
 
             <button
               onClick={restartQuiz}
-              className="bg-blue-500 text-white px-4 py-2 rounded mt-4"
+              className="bg-blue-500 text-white px-4 py-2 rounded mt-4 cursor-pointer"
             >
               Retake Quiz
             </button>
@@ -234,7 +234,7 @@ export default function QuizApp() {
               {questions[current].options.map((option, idx) => (
                 <button
                   key={idx}
-                  className={`px-4 py-2 border rounded flex items-center gap-x-2 ${
+                  className={`px-4 py-2 border rounded flex items-center gap-x-2 cursor-pointer ${
                     answers[current] === option
                       ? "bg-blue-200"
                       : "bg-gray-50 hover:bg-gray-100"
@@ -253,7 +253,7 @@ export default function QuizApp() {
                 className={`px-4 py-2 rounded ${
                   current === 0
                     ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                    : "bg-gray-500 text-white"
+                    : "bg-gray-500 text-white cursor-pointer"
                 }`}
               >
                 Previous
@@ -265,7 +265,7 @@ export default function QuizApp() {
                 className={`px-4 py-2 rounded ${
                   current === questions.length - 1
                     ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                    : "bg-blue-500 text-white"
+                    : "bg-blue-500 text-white cursor-pointer"
                 }`}
               >
                 Next
@@ -279,7 +279,7 @@ export default function QuizApp() {
               className={`w-sm px-4 py-2 rounded ${
                 answers.every((a) => a === "")
                   ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                  : "bg-red-500 text-white"
+                  : "bg-red-500 text-white cursor-pointer"
               }`}
             >
               Submit

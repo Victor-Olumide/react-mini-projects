@@ -176,7 +176,7 @@ export default function TicTacToe() {
         <div className="flex justify-center gap-4 mb-4">
           <button
             onClick={() => chooseMode("single")}
-            className={`px-4 py-2 rounded-lg ${
+            className={`px-4 py-2 rounded-lg cursor-pointer ${
               mode === "single"
                 ? "bg-blue-600 text-white"
                 : "bg-gray-700 text-gray-300 hover:bg-gray-600"
@@ -187,7 +187,7 @@ export default function TicTacToe() {
 
           <button
             onClick={() => chooseMode("two")}
-            className={`px-4 py-2 rounded-lg ${
+            className={`px-4 py-2 rounded-lg cursor-pointer ${
               mode === "two"
                 ? "bg-blue-600 text-white"
                 : "bg-gray-700 text-gray-300 hover:bg-gray-600"
@@ -202,7 +202,7 @@ export default function TicTacToe() {
             <button
               onClick={() => chooseSymbol("X")}
               disabled={playerSymbol === "X"}
-              className={`px-4 py-2 rounded-lg ${
+              className={`px-4 py-2 rounded-lg cursor-pointer ${
                 playerSymbol === "X"
                   ? "bg-green-600 text-white"
                   : "bg-gray-700 text-gray-300 hover:bg-gray-600"
@@ -213,7 +213,7 @@ export default function TicTacToe() {
             <button
               onClick={() => chooseSymbol("O")}
               disabled={playerSymbol === "O"}
-              className={`px-4 py-2 rounded-lg ${
+              className={`px-4 py-2 rounded-lg cursor-pointer ${
                 playerSymbol === "O"
                   ? "bg-green-600 text-white"
                   : "bg-gray-700 text-gray-300 hover:bg-gray-600"
@@ -236,7 +236,7 @@ export default function TicTacToe() {
                 <button
                   key={index}
                   onClick={() => handleClick(index)}
-                  className={`flex items-center justify-center w-20 h-20 text-3xl font-bold text-white ${borderClasses}`}
+                  className={`flex items-center justify-center w-20 h-20 text-3xl font-bold text-white cursor-pointer ${borderClasses}`}
                 >
                   {cell || ""}
                 </button>
@@ -257,7 +257,7 @@ export default function TicTacToe() {
 
         <button
           onClick={resetGame}
-          className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-500 transition"
+          className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-500 transition cursor-pointer"
         >
           Restart Game
         </button>

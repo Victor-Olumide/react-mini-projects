@@ -1,32 +1,32 @@
-"use client";
+"use client"
 
-import { useState } from "react";
+import { useState } from "react"
 
 export default function PasswordGenerator() {
-  const [length, setLength] = useState(12);
-  const [includeUpper, setIncludeUpper] = useState(true);
-  const [includeNumbers, setIncludeNumbers] = useState(true);
-  const [includeSymbols, setIncludeSymbols] = useState(true);
-  const [password, setPassword] = useState("");
+  const [length, setLength] = useState(12)
+  const [includeUpper, setIncludeUpper] = useState(true)
+  const [includeNumbers, setIncludeNumbers] = useState(true)
+  const [includeSymbols, setIncludeSymbols] = useState(true)
+  const [password, setPassword] = useState("")
 
   const generatePassword = () => {
-    let chars = "abcdefghijklmnopqrstuvwxyz";
-    if (includeUpper) chars += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    if (includeNumbers) chars += "0123456789";
-    if (includeSymbols) chars += "!@#$%^&*()_-+=<>?/{}~";
+    let chars = "abcdefghijklmnopqrstuvwxyz"
+    if (includeUpper) chars += "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    if (includeNumbers) chars += "0123456789"
+    if (includeSymbols) chars += "!@#$%^&*()_-+=<>?/{}~"
 
-    let newPassword = "";
+    let newPassword = ""
     for (let i = 0; i < length; i++) {
-      const randomIndex = Math.floor(Math.random() * chars.length);
-      newPassword += chars[randomIndex];
+      const randomIndex = Math.floor(Math.random() * chars.length)
+      newPassword += chars[randomIndex]
     }
-    setPassword(newPassword);
-  };
+    setPassword(newPassword)
+  }
 
   const copyToClipboard = () => {
-    navigator.clipboard.writeText(password);
-    alert("Password copied to clipboard!");
-  };
+    navigator.clipboard.writeText(password)
+    alert("Password copied to clipboard!")
+  }
 
   return (
     <main className="min-h-screen flex flex-col md:flex-row items-center justify-center gap-8 bg-gray-900 bg-[url(/security.jpg)] bg-cover bg-center bg-no-repeat bg-blend-overlay absolute inset-0 z-0 px-6 py-10">
@@ -108,5 +108,5 @@ export default function PasswordGenerator() {
         )}
       </div>
     </main>
-  );
+  )
 }
